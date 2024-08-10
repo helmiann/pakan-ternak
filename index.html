@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <title>Pakan Ternak Index</title>
 </head>
-<body>
-    <form action=""></form>
+<body style="background-color: gray;"> <!--mata aing sakit kalo putih-->
+    
+
+    <!--test selecbox-->
+    <select name="selectBox1" id="selectBox1">
+        <option value="option1">option1</option>
+        <option value="option2">option2</option>
+        <option value="option3">option3</option>
+        <option value="option4">option4</option> 
+     </select>
+     
+     <select name="selectBox2" id="selectBox2">
+         <option value="option1">option1</option>
+         <option value="option2">option2</option>
+         <option value="option3">option3</option>
+         <option value="option4">option4</option>    
+     </select>
+     
+     <select name="selectBox3" id="selectBox3">
+         <option value="option1">option1</option>
+         <option value="option2">option2</option>
+         <option value="option3">option3</option>
+         <option value="option4">option4</option>    
+     </select>
 </body>
+<script>
+
+    //Hide Option if Selected
+    $("select").change(function(e){
+        $("select option").removeAttr('disabled');
+        $("select").each(function(i,s){
+            $("select").not(s).find("option[value="+$(s).val()+"]").attr('disabled','disabled');
+        });
+    });
+</script>
 </html>
