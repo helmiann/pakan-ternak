@@ -30,6 +30,19 @@
          <option value="option3">option3</option>
          <option value="option4">option4</option>    
      </select>
+
+     <form class="form-horizontal">
+        <div class="row field_wrapper">
+          
+            
+            <input id="title" class="form-control form-item required" name="input_title[]" type="text" value="" data-label="title" />
+            
+          
+        </div>
+        
+        
+      </form>
+      <button class="add_input_button" title="Add field">Add Field</button>
 </body>
 <script>
 
@@ -40,5 +53,33 @@
             $("select").not(s).find("option[value="+$(s).val()+"]").attr('disabled','disabled');
         });
     });
+
+
+
+    $(document).ready(function() {
+    var max_fields = 10;
+    var $add_input_button = $('.add_input_button');
+    var $field_wrapper = $('.field_wrapper');
+    var new_field_html = '<div><input name="title[]" class="form-control form-item type="text" value="" data-label="title" /><a href="javascript:void(0);" class="remove_input_button" title="remove field">-</a></div>';
+    var input_count = 1;
+
+    //add inputs
+    $add_input_button.click(function() {
+        if (input_count < max_fields) {
+        input_count++;
+        $field_wrapper.append(new_field_html);
+        }
+    });
+
+    //remove_input
+    $field_wrapper.on('click', '.remove_input_button', function(e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        input_count--;
+    });
+    });
+
+
+
 </script>
 </html>
