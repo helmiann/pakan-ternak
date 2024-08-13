@@ -31,9 +31,16 @@
          <option value="option4">option4</option>    
      </select>
 
+     <br>
+
      <form class="form-horizontal">
         <div class="row field_wrapper">
-          
+            <select name="selectBox3" id="selectBox3">
+                <option value="option1">option1</option>
+                <option value="option2">option2</option>
+                <option value="option3">option3</option>
+                <option value="option4">option4</option>    
+            </select>
             
             <input id="title" class="form-control form-item required" name="input_title[]" type="text" value="" data-label="title" />
             
@@ -60,7 +67,7 @@
     var max_fields = 10;
     var $add_input_button = $('.add_input_button');
     var $field_wrapper = $('.field_wrapper');
-    var new_field_html = '<div><input name="title[]" class="form-control form-item type="text" value="" data-label="title" /><a href="javascript:void(0);" class="remove_input_button" title="remove field">-</a></div>';
+    var new_field_html = '<div><input name="title[]" class="form-control form-item type="text" value="" data-label="title" /></div>';
     var input_count = 1;
 
     //add inputs
